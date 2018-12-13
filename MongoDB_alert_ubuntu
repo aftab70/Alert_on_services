@@ -1,0 +1,10 @@
+#!/bin/bash
+
+status=$(systemctl status mongod.service | grep Active | awk '{print $2}')
+
+if [ "$status" = "active" ]
+then
+        echo "Service is runing"
+else
+        echo "Service is not running" | /usr/sbin/ssmtp aftabali025@gmail.com < msg.txt
+fi
