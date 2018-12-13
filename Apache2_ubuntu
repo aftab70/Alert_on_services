@@ -1,0 +1,6 @@
+
+
+
+
+
+systemctl status apache2.service | grep Active | awk '{print $2}'
