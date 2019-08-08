@@ -1,0 +1,10 @@
+# Bash script for port testing 
+
+if telnet hostname 80 < /dev/null 2>&1 | grep -q Connected
+then
+    echo its fine
+else
+    echo port 80 is down!
+fi
+
+###########################################################################################################################
